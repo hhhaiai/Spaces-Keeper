@@ -1,0 +1,49 @@
+name: 抱抱脸空间状态检查与自动构建
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */4 * * *'
+
+env:
+  HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  USERNAME: ${{ secrets.USERNAME }}
+  SPACE_LIST: ${{ secrets.SPACE_LIST }}
+  GLOBAL_TIMEOUT_SECONDS: 1800
+
+jobs:
+  check_and_rebuild:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main 
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - run: pip install requests pytz
+
+      - id: check_and_rebuild
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python run.py
+          pwd
+          ls -al
+          ls -al docs
+
+      - if: always()
+        run: exit ${{ steps.check_and_rebuild.outputs.exit_code }}
+
+      - name: 提交更改
+        if: always()
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/index.html README.md
+          git commit -m "更新空间状态报告" || echo "No changes to commit"
+          git push origin ${{ github.ref_name }} 
