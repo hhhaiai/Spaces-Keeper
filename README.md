@@ -22,3 +22,4 @@ https://github.com/{用户名}/HF-Space-Helper/settings/secrets/actions
 ## 官方 Demo
 
 https://fmapi.github.io/HF-Space-Helper/
+| [2025-01-04](https://github.com/hhhaiai/Spaces-Keeper/commits/66c5b5a3875ab815f3fa43ea1df7339d992566e9/docs/index.html) |  |
