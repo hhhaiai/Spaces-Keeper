@@ -28,3 +28,4 @@ https://fmapi.github.io/HF-Space-Helper/
 | [2025-01-05](https://github.com/hhhaiai/Spaces-Keeper/commits/1010c8b286bea2699b74b2351ef45a7c9cf21aa4/docs/index.html) |  |
 | [2025-01-05](https://github.com/hhhaiai/Spaces-Keeper/commits/0fcb3967df12df12ff1df9f2232789e0e683ec6e/docs/index.html) |  |
 | [2025-01-05](https://github.com/hhhaiai/Spaces-Keeper/commits/1c40f034239a45888d4df42547d6dfcb2a44a3ce/docs/index.html) |  |
+| [2025-01-05](https://github.com/hhhaiai/Spaces-Keeper/commits/6e14ca25b443d8a72f777f8c60b58ac0cacdc2d6/docs/index.html) |  |
